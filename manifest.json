@@ -1,0 +1,26 @@
+{
+  "name": "Etru Chrome Extender",
+  "author": "Pertsev Roman",
+  "version": "1.0",
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [{
+    "js": ["content.js"],
+    "all_frames": true,
+    "run_at": "document_start",
+    "matches": ["*://kurentino/*"]
+  }],
+  "manifest_version": 2,
+  "description": "Расширение для включения возможностей передачи изображения рабочего стола и приложений посредством WebRTC",
+  "externally_connectable": {
+    "matches": ["*://kurentino/*"]
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": [
+    "desktopCapture",
+    "*://kurentino/*"
+  ]
+}
