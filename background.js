@@ -4,7 +4,6 @@
 
 chrome.runtime.onConnect.addListener(function (port) {
     port.onMessage.addListener(function (message) {
-        console.log('Пришли данные (background.js)');
         if(message.id === 'getScreenId') {
             chrome.desktopCapture.chooseDesktopMedia(['screen', 'window'], port.sender.tab, function (sourceId) {
                 if(!sourceId || ! sourceId.length) {
