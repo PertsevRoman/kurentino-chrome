@@ -9,18 +9,19 @@
     "js": ["content.js"],
     "all_frames": true,
     "run_at": "document_start",
-    "matches": ["*://kurentino/*"]
+    "matches": ["*://kurentino/*", "*://genesis/*"]
   }],
   "manifest_version": 2,
   "description": "Расширение для включения возможностей передачи изображения рабочего стола и приложений посредством WebRTC",
   "externally_connectable": {
-    "matches": ["*://kurentino/*"]
+    "matches": ["*://kurentino/*", "*://genesis/*"]
   },
   "icons": {
     "48": "icon.png"
   },
   "permissions": [
     "desktopCapture",
-    "*://kurentino/*"
+    "*://kurentino/*",
+    "*://genesis/*"
   ]
 }
