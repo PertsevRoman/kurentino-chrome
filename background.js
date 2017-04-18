@@ -10,6 +10,7 @@ chrome.runtime.onConnect.addListener(function (port) {
                     port.postMessage('Доступ закрыт');
                 } else {
                     port.postMessage({
+                        id: 'screenId',
                         sourceId: sourceId
                     });
                 }

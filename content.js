@@ -8,8 +8,23 @@ port.onMessage.addListener(function (message) {
     window.postMessage(message, '*');
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    window.postMessage({
+        id: 'extensionLoaded',
+        status: true
+    }, '*');
+});
+
 window.addEventListener('message', function (event) {
-    if(event.data.id === 'getScreenId') {
-        port.postMessage(event.data);
+    switch (event.data.id) {
+        case 'getScreenId': {
+            port.postMessage(event.data);
+        } break;
+        case 'getExtensionStatus': {
+            window.postMessage({
+                id: 'extensionLoaded',
+                status: true
+            }, '*');
+        } break;
     }
 });

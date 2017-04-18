@@ -1,7 +1,7 @@
 {
   "name": "WebRTC Chrome Extender",
   "author": "Pertsev Roman (income-software.org)",
-  "version": "1.1",
+  "version": "1.2",
   "background": {
     "page": "background.html"
   },
