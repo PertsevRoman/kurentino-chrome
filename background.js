@@ -7,7 +7,10 @@ chrome.runtime.onConnect.addListener(function (port) {
         if(message.id === 'getScreenId') {
             chrome.desktopCapture.chooseDesktopMedia(['screen', 'window'], port.sender.tab, function (sourceId) {
                 if(!sourceId || ! sourceId.length) {
-                    port.postMessage('Доступ закрыт');
+                    port.postMessage({
+                        id: 'screenId',
+                        sourceId: null
+                    });
                 } else {
                     port.postMessage({
                         id: 'screenId',
